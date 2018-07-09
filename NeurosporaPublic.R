@@ -649,7 +649,7 @@ if(rm.outliers==TRUE){
 if(rm.outliers==FALSE){
   sigs$sig[c(1,5,16)] <- "*"
 }
-p.6 <- ggplot(SF.1, aes_string("Variate", "Vmax.16", color="GrowthTemp", shape="GrowthTemp")) + xlab(NULL) + ylab("log(Vmax)") + labs(title = "a)", color="Growth T", shape="Growth T") + 
+p.6 <- ggplot(SF.1, aes_string("Variate", "Vmax.16", color="GrowthTemp", shape="GrowthTemp")) + xlab(NULL) + ylab("log(Vmax)") + labs(title = "A", color="Growth T", shape="Growth T") + 
   geom_boxplot(position=position_dodge(width=0.8),width=0.7,outlier.size=0) + geom_point(position=position_jitterdodge(jitter.width=0, dodge.width=0.8)) +
   geom_vline(xintercept=seq(1.5,9.5,1),color="black",size=0.1) +
   geom_text(data=sigs,aes(label=sig),color="black",size=10) +
@@ -664,7 +664,7 @@ if(rm.outliers==FALSE){
   sigs$sig[c(15)] <- "*"
 }
 # No significant growth T effects
-p.6.1 <- ggplot(SF.1, aes_string("Variate", "Vmax.Slope", color="GrowthTemp", shape="GrowthTemp")) + xlab(NULL) + ylab("Vmax temperature sensitivity") + labs(title = "b)", color="Growth T", shape="Growth T") + 
+p.6.1 <- ggplot(SF.1, aes_string("Variate", "Vmax.Slope", color="GrowthTemp", shape="GrowthTemp")) + xlab(NULL) + ylab("Vmax temperature sensitivity") + labs(title = "B", color="Growth T", shape="Growth T") + 
   geom_boxplot(position=position_dodge(width=0.8),width=0.7,outlier.size=0) + geom_point(position=position_jitterdodge(jitter.width=0, dodge.width=0.8)) +
   geom_vline(xintercept=seq(1.5,9.5,1),color="black",size=0.1) +
   geom_text(data=sigs,aes(label=sig),color="black",size=10) +
@@ -682,7 +682,7 @@ pdf("FigS2.pdf",width = 7,height = 10)
 # Boxplots paired by growth temp
 sigs <- data.frame(Variate=enzymes,Substrate=c(rep("Lignin",10),rep("Sucrose",10)),GrowthTemp="16",Km.16=8,sig=NA)
 sigs$sig[13] <- "*"
-p.6.2 <- ggplot(SF.1, aes_string("Variate", "Km.16", color="GrowthTemp", shape="GrowthTemp")) + xlab(NULL) + ylab("log(Km)") + labs(title = "a)", color="Growth T", shape="Growth T") + 
+p.6.2 <- ggplot(SF.1, aes_string("Variate", "Km.16", color="GrowthTemp", shape="GrowthTemp")) + xlab(NULL) + ylab("log(Km)") + labs(title = "A", color="Growth T", shape="Growth T") + 
   geom_boxplot(position=position_dodge(width=0.8),width=0.7,outlier.size=0) + geom_point(position=position_jitterdodge(jitter.width=0, dodge.width=0.8)) +
   geom_vline(xintercept=seq(1.5,9.5,1),color="black",size=0.1) +
   geom_text(data=sigs,aes(label=sig),color="black",size=10) +
@@ -693,7 +693,7 @@ p.6.2 <- ggplot(SF.1, aes_string("Variate", "Km.16", color="GrowthTemp", shape="
   facet_grid(Substrate~., scales="fixed")
 
 # No significant growth T effects on Km TS
-p.6.3 <- ggplot(SF.1, aes_string("Variate", "Km.Slope", color="GrowthTemp", shape="GrowthTemp")) + xlab(NULL) + ylab("Km temperature sensitivity") + labs(title = "b)", color="Growth T", shape="Growth T") + 
+p.6.3 <- ggplot(SF.1, aes_string("Variate", "Km.Slope", color="GrowthTemp", shape="GrowthTemp")) + xlab(NULL) + ylab("Km temperature sensitivity") + labs(title = "B", color="Growth T", shape="Growth T") + 
   geom_boxplot(position=position_dodge(width=0.8),width=0.7,outlier.size=0) + geom_point(position=position_jitterdodge(jitter.width=0, dodge.width=0.8)) +
   geom_vline(xintercept=seq(1.5,9.5,1),color="black",size=0.1) +
   theme_linedraw() + 
